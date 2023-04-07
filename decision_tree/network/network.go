@@ -22,6 +22,7 @@ func GoServeTree() {
 	http.HandleFunc("/vote", VoteHandler)
 	http.HandleFunc("/show", ShowHandler)
 	http.HandleFunc("/check", healthCheck)
+	http.HandleFunc("/auth", AuthHandler)
 	log.Println("Server start at " + port)
 
 	http.ListenAndServe(":"+port, nil)
