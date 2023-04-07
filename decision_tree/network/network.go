@@ -14,9 +14,10 @@ var Missions = make(map[string]*Mission)
 func GoServeTree() {
 	err := godotenv.Load(".env")
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 	port := os.Getenv("PORT")
+	log.Println("port: ", port)
 	http.HandleFunc("/create", CreateHandler)
 	http.HandleFunc("/vote", VoteHandler)
 	http.HandleFunc("/show", ShowHandler)
